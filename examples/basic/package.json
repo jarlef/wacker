@@ -1,0 +1,17 @@
+{
+  "name": "wacker-examples-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && wack build",
+    "start": "npm run clean && wack serve -e src/index.html"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.3",
+    "wacker": "file:../.."
+  },
+  "author": "",
+  "license": "ISC"
+}
