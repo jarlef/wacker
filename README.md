@@ -7,7 +7,7 @@ Zero configuration web application / library bundler
 1. Install 
 
 ```
-npm install wacker
+npm install wacker --save-dev
 ```
 
 2. Create an entry point. E.g a html, script or css file
