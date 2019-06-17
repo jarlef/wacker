@@ -5,20 +5,11 @@ const apply = (config, options) => {
     config.module.rules.push({
         test: /\.css$/,
         use: [
-            options.production ? MiniCssExtractPlugin.loader : 'style-loader', // creates style nodes from JS strings
+            options.production ? MiniCssExtractPlugin.loader : 'vue-style-loader', // creates style nodes from JS strings
+            'cache-loader',
             'css-loader', // translates CSS into CommonJS
         ]
     });
-
-    if(options.production) {
-        config.plugins.push(new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            //filename: "[name].css",
-            //chunkFilename: "[id].css"
-            filename: 'index.css'
-        }));
-    }
 };
     
 module.exports = apply;

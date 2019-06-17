@@ -1,0 +1,27 @@
+{
+  "name": "wacker-examples-angular",
+  "description": "Simple Angular example (ported from Parcel repo https://github.com/parcel-bundler/examples/tree/master/angular/src)",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && wack build -e src/index.html",
+    "start": "npm run clean && wack serve -e src/index.html"
+  },
+  "dependencies": {
+    "@angular/common": "^7.0.2",
+    "@angular/compiler": "^7.0.2",
+    "@angular/core": "^7.0.1",
+    "@angular/platform-browser": "^7.0.1",
+    "@angular/platform-browser-dynamic": "^7.0.1",
+    "core-js": "^2.5.7",
+    "rxjs": "^6.3.3",
+    "systemjs": "^2.1.1",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.3",
+    "wacker": "file:../..",
+    "typescript": "^3.1.6"
+  }
+}

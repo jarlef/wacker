@@ -1,0 +1,20 @@
+{
+    "name": "wacker-examples-svelte",
+    "version": "1.0.0",
+    "description": "Example using svelte",
+    "main": "index.js",
+    "private": true,
+    "scripts": {
+        "clean": "rimraf dist",
+        "build": "npm run clean && wack build -e src/index.html",
+        "start": "npm run clean && wack serve -e src/index.html"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "rimraf": "^2.6.3",
+        "wacker": "file:../.."
+    },
+    "dependencies": {
+        "svelte": "^1.1.3"
+    }
+}

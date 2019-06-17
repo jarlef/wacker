@@ -5,14 +5,14 @@ const express = require('express');
 const createConfig = require('./config/create');
 
 const webpack = require('webpack');
+const open = require('open');
+const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true';
+//const hotMiddlewareScript = 'webpack-hot-middleware/client';
 
-const create = (options = {}) => {
+const create = (options) => {
   const config = createConfig({...options, watch: true});
 
-    config.entry = [
-      ...[].concat(config.entry),
-      'webpack-hot-middleware/client'
-    ].filter(Boolean);
+  Object.keys(config.entry).forEach((key) => config.entry[key] = [config.entry[key], hotMiddlewareScript])
 
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
@@ -29,8 +29,10 @@ const create = (options = {}) => {
   );
 
   app.use(hotMiddleware(compiler));
-
   app.listen(options.port, () => console.log(`Dev server listing on http://localhost:${options.port}`));
+  if(options.open) {
+    open(`http://localhost:${options.port}`);
+  }
 };
 
 module.exports = create;

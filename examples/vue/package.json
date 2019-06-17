@@ -1,0 +1,18 @@
+{
+    "name": "parcel-examples-vue",
+    "description": "Simple Vue.js example (ported from parcel repo https://github.com/parcel-bundler/examples/tree/master/vue)",
+    "version": "1.0.0",
+    "main": "src/index.html",
+    "scripts": {
+        "clean": "rimraf dist",
+        "build": "npm run clean && wack build -e src/index.html",
+        "start": "npm run clean && wack serve -e src/index.html"
+    },
+    "devDependencies": {
+        "rimraf": "^2.6.3",
+        "wacker": "file:../.."
+    },
+    "dependencies": {
+        "vue": "^2.6.10"
+    }
+}

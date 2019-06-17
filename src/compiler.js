@@ -7,14 +7,14 @@ const createConfig = require('./config/create');
 const statsPresetToOptions = webpack.Stats.presetToOptions;
 
 const log = (message) => {
-  process.stdout.clearLine();
-  process.stdout.cursorTo(0);
-  process.stdout.write(message);
-  //console.log(message);
+  //process.stdout.clearLine();
+  //process.stdout.cursorTo(0);
+  //process.stdout.write(message);
+  console.log(message);
 }
 
 const logInfo = (info) => {
-  console.clear();
+  //console.clear();
 
   console.log(chalk.cyan('Assets:'))
 
@@ -30,7 +30,7 @@ const logInfo = (info) => {
   console.log();
 }
 
-const create = (options = {}) => {
+const create = (options) => {
 
   console.clear();
 
@@ -65,7 +65,7 @@ const create = (options = {}) => {
     compiler = compiler.compiler;
   }
 
-  compiler.hooks.beforeCompile.tap('app', (context, entry) => {
+  compiler.hooks.beforeCompile.tap('app', () => {
     log(chalk.cyan(`Building...`));
   });
 };

@@ -5,7 +5,8 @@ const apply = (config, options) => {
     config.module.rules.push({
         test: /\.scss$/,
         use: [
-            options.production ? MiniCssExtractPlugin.loader : 'style-loader', // creates style nodes from JS strings
+            options.production ? MiniCssExtractPlugin.loader : 'vue-style-loader', // creates style nodes from JS strings
+            'cache-loader',
             'css-loader',
             'sass-loader',
         ]

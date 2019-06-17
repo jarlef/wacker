@@ -1,17 +1,16 @@
 {
-  "name": "wacker-examples-basic",
+  "name": "wacker-examples-react-with-typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && wack build",
-    "start": "npm run clean && wack serve -e src/index.html"
+    "build": "npm run clean && wack build -e src/styles.css"
   },
   "devDependencies": {
     "rimraf": "^2.6.3",
     "wacker": "file:../.."
   },
+  "dependencies": {},
   "author": "",
   "license": "ISC"
 }

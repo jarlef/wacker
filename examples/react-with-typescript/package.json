@@ -1,18 +1,20 @@
 {
-  "name": "wacker-examples-react",
+  "name": "wacker-examples-react-with-typescript",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean && wack build -e src/index.html",
-    "start": "npm run clean && wack serve -e src/index.html"
+    "build": "npm run clean && wack build -e index.html",
+    "start": "npm run clean && wack serve -e index.html"
   },
   "devDependencies": {
     "rimraf": "^2.6.3",
     "wacker": "file:../.."
   },
   "dependencies": {
+    "@types/react": "^16.8.20",
+    "@types/styled-components": "^4.1.16",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "styled-components": "^4.3.1"
