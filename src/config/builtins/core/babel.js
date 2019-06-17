@@ -13,7 +13,7 @@ const apply = (config, options, pkg) => {
                    
     const babelLoader = { loader: 'babel-loader' };
     const loaders = [
-        
+        'cache-loader',
         babelLoader];
     if(typescript) {
 

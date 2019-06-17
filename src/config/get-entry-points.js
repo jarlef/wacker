@@ -36,7 +36,6 @@ const getEntryPointsFromHtmlFile = (options, entryFile) => {
         files.push(path.join(options.root, fileRoot, src));
     });
     
-    console.log(files);
     const entryPoints = {};
     files.forEach(f => entryPoints[path.basename(f).split('.')[0]] = f);
     return entryPoints;

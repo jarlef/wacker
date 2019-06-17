@@ -7,14 +7,14 @@ const createConfig = require('./config/create');
 const statsPresetToOptions = webpack.Stats.presetToOptions;
 
 const log = (message) => {
-  //process.stdout.clearLine();
-  //process.stdout.cursorTo(0);
-  //process.stdout.write(message);
-  console.log(message);
+  process.stdout.clearLine();
+  process.stdout.cursorTo(0);
+  process.stdout.write(message);
+  //console.log(message);
 }
 
 const logInfo = (info) => {
-  //console.clear();
+  console.clear();
 
   console.log(chalk.cyan('Assets:'))
 
