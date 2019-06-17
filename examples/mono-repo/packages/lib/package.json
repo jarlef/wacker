@@ -1,0 +1,21 @@
+{
+  "name": "wacker-examples-mono-repo-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "npm run clean && wack build -e src/index.js -w",
+    "build": "npm run clean && wack build -e src/index.js"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "styled-components": "^4.3.1"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.6",
+    "styled-components": ">= 4.3.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

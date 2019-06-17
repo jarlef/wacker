@@ -7,30 +7,34 @@ const createConfig = require('./config/create');
 const statsPresetToOptions = webpack.Stats.presetToOptions;
 
 const log = (message) => {
-  //process.stdout.clearLine();
-  //process.stdout.cursorTo(0);
-  //process.stdout.write(message);
-  console.log(message);
+  process.stdout.clearLine();
+  process.stdout.cursorTo(0);
+  process.stdout.write(message);
+  //console.log(message);
 }
 
 const logInfo = (info) => {
-  //console.clear();
+  console.clear();
 
-  console.log(chalk.blue('Output:'))
+  console.log(chalk.cyan('Assets:'))
 
   info.chunks.forEach(c => {
-    console.log(chalk.blue(`${c.files[0]}:\t${c.size}`))
+    c.files.forEach(f => {
+      console.log(chalk.yellow(`- ${f}`))
+    })
   });
 
   console.log();
-  console.log(chalk.green(`Build time:\t${info.time}`));
+  const time = info.time > 1000 ? `${(info.time / 1000).toFixed(1)} seconds` : `${info.time} ms`;
+  console.log(chalk.green(`Build time: ${time}`));
+  console.log();
 }
 
 const create = (options = {}) => {
 
   console.clear();
 
-  log(chalk.blue(`Starting build...`));
+  log(chalk.cyan(`Starting build...`));
   const config = createConfig(options);
 
   let compiler = webpack(config, (err, stats) => { // Stats Object
@@ -62,7 +66,7 @@ const create = (options = {}) => {
   }
 
   compiler.hooks.beforeCompile.tap('app', (context, entry) => {
-    log(chalk.blue(`Rebuilding...`));
+    log(chalk.cyan(`Building...`));
   });
 };
 

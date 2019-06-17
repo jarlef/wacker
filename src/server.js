@@ -7,7 +7,7 @@ const createConfig = require('./config/create');
 const webpack = require('webpack');
 
 const create = (options = {}) => {
-  const config = createConfig(options);
+  const config = createConfig({...options, watch: true});
 
     config.entry = [
       ...[].concat(config.entry),
@@ -18,15 +18,12 @@ const create = (options = {}) => {
 
 
   const compiler = webpack(config);
-
   const app = express();
-  
-
 
   app.use(
     middleware(compiler, {
       writeToDisk: false,
-      stats: false,
+      stats: true,
       publicPath: '/'
     })
   );

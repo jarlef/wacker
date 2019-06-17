@@ -12,13 +12,13 @@ const apply = (config, options, pkg) => {
             exclude: /node_modules/,
             loader: 'babel-loader',
     };
-
+    
     config.resolve.extensions.push('.js')
 
     if(!hasBabelRc) {
         loaderConfig.options = {
-            presets: [ '@babel/preset-env'],
-            plugins: [ '@babel/plugin-transform-runtime' ]
+            presets: [ ['@babel/preset-env', { "modules": false, "loose": true }]],
+            plugins: [ '@babel/plugin-transform-runtime']
         };
 
         if(hasDependency(pkg, 'react')) {

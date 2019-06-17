@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && wack build -e src/index.html",
-    "start": "npm run clean && wack serve"
+    "start": "npm run clean && wack serve -e src/index.html"
   },
   "devDependencies": {
     "rimraf": "^2.6.3",

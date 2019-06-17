@@ -17,7 +17,6 @@ const getEntryPoints = (options) => {
 }
 
 const getEntryPointsFromHtmlFile = (options, entryFile) => {
-
     const html = fs.readFileSync(entryFile, { encoding: 'UTF-8'});
     const fileRoot = path.dirname(entryFile);
     const doc = cheerio.load(html);

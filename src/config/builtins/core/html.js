@@ -26,14 +26,11 @@ class RemoveReferencesPlugin {
 const apply = (config, options) => {
 
     if(!options.entry.endsWith(".html")) {
-        config.plugins.push(new HtmlWebpackPlugin({ template: 'src/index.html', filename: 'index.html'}));
-        config.plugins.push(new RemoveReferencesPlugin());
-
         return;            
     }
 
     const params = {
-        template: options.entry
+        template:  options.entry
     };
 
     config.plugins.push(new HtmlWebpackPlugin(params)); 
