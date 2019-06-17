@@ -56,7 +56,8 @@ npm run build
 - [x] Typescript
 - [x] Css
 - [x] Scss
-- [x] Vue
 - [x] Angular
 - [x] React
 - [ ] Svelte
+- [x] Vue
+- [x] Mono repo / Lerna
