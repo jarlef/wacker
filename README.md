@@ -1,8 +1,8 @@
 # Wacker - The Easy Web Packer
 
-![alt text](assets/logo.png "Wacker")
+![alt text](https://raw.githubusercontent.com/jarlef/wacker/master/assets/logo.png "Wacker")
 
-Zero configuration web application / library bundler
+Zero configuration web application / library bundler built on top of webpack
 
 ## Getting started
 
