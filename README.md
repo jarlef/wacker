@@ -1,18 +1,21 @@
-# Wacker
+# Wacker - The Easy Web Packer
+
+![alt text](assets/logo.png "Wacker")
 
 Zero configuration web application / library bundler
 
 ## Getting started
 
-1. Install 
+### 1 - Install
 
-```
+```bash
 npm install wacker --save-dev
 ```
 
-2. Create an entry point. E.g a html, script or css file
+### 2 - Create an entry point. E.g a html, script or css file
 
-- index.html
+index.html
+
 ```html
 <html>
     <body>
@@ -21,7 +24,7 @@ npm install wacker --save-dev
 </html>
 ```
 
-- src/main.js
+and a script. src/main.js
 ```js
 function main() {
     console.log('do something');
@@ -30,7 +33,7 @@ function main() {
 main();
 ```
 
-3. Add scripts to package.json
+### 3 - Add scripts to package.json
 
 ```json
 {
@@ -41,7 +44,7 @@ main();
 }
 ```
 
-4. Run/build it
+### 4 - Run/build it
 
 ```bash
 # run
